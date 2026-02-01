@@ -19,6 +19,7 @@ async fn main() {
     axum::serve(listener, app).await.unwrap();
 }
 
-async fn root() -> &'static str {
-    "idk"
+async fn root() -> axum::response::Redirect {
+    // &'static str
+    axum::response::Redirect::to("https://github.com/faretek1/ralcapi")
 }
