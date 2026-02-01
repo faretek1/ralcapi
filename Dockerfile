@@ -1,7 +1,7 @@
 FROM rust:1.93
 WORKDIR /app
 
-COPY cargo.lock cargo.toml ./
+COPY Cargo.lock Cargo.toml ./
 RUN cargo update
 
 COPY . .
