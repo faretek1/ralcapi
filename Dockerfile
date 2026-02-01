@@ -17,4 +17,4 @@ RUN cargo build --release --bin ralcapi
 FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/target/release/ralcapi /usr/local/bin
-ENTRYPOINT [ "/usr/local/bin/app" ]
+ENTRYPOINT [ "/usr/local/bin/ralcapi" ]
