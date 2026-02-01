@@ -14,7 +14,8 @@ RUN cargo chef cook --release --recipe-path recipe.json
 COPY . .
 RUN cargo build --release --bin ralcapi
 
-FROM alpine:latest
+FROM debian:bookworm-slim
 WORKDIR /app
 COPY --from=builder /app/target/release/ralcapi /usr/local/bin
+EXPOSE 3000
 ENTRYPOINT [ "/usr/local/bin/ralcapi" ]
